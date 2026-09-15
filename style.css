@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Oranienbaum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9vh;
+    margin: 0 6rem;
+    padding: 0 80px 0px 20px;
+    color: #fff;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Step 2: Apply the backdrop blur */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
+}
+
+header .logoNDname {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logoNDname img{
+    width: 3vw;
+}
+
+header nav .list{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+header nav .list li{
+    list-style-type: none;       /* to remove the bullet point on a list*/
+}
+
+header nav .list li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* for the hero section */
+.hero-section{
+    padding: 1rem 0 0 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/hero-image.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-text{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text h1{
+    font-size: 6rem;
+    color: #fff;
+}
+
+.hero-text p{
+    color: #fff;
+}
+
+.hero-text div{
+    background-color: #fff;
+    width: 21vh;
+    padding: 9px 0px;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.hero-text div a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #a77030;
+    padding: 8px 20px;
+    border-radius: 50px;
+
+}
