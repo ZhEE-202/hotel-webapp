@@ -4,10 +4,18 @@
     box-sizing: border-box;
 }
 
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
 body{
     font-family: "Oranienbaum", serif;
     font-weight: 400;
     font-style: normal;
+    max-width: 100rem;
+    margin-inline: auto;
 }
 
 header{
@@ -15,15 +23,9 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 9vh;
-    margin: 0 6rem;
-    padding: 0 80px 0px 20px;
+    margin: 0 3rem;
+    padding: 30px 60px;
     color: #fff;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
-    /* Step 2: Apply the backdrop blur */
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    
 }
 
 header .logoNDname {
@@ -53,6 +55,8 @@ header nav .list li a{
     color: #fff;
 }
 
+
+
 /* for the hero section */
 .hero-section{
     padding: 1rem 0 0 0;
@@ -69,30 +73,447 @@ header nav .list li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .hero-text h1{
-    font-size: 6rem;
+    font-size: 5rem;
     color: #fff;
 }
 
-.hero-text p{
+.hero-text .hero-subtitle{
     color: #fff;
+    font-size: 18px;
+    margin-bottom: 24px;
 }
 
-.hero-text div{
+.hero-button {
+  display: inline-block;
+  background-color: #230d05; 
+  color: #ffffff !important;            
+  padding: 12px 32px;        
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;        
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #a77030; 
+}
+
+.brand-description{
+    margin: 50px 0;
     background-color: #fff;
-    width: 21vh;
-    padding: 9px 0px;
-    border-radius: 50px;
-    margin-top: 10px;
+    height: 100%;
 }
 
-.hero-text div a{
+.text-area{
+    text-align: center;
+}
+
+.text-area span{
+    color: #a77030;
+    padding: 5px 50px;
+}
+
+.text-area h1{
+    color: #230d05;
+    font-size: 3rem;
+}
+
+.description{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.description__tags{
+    background-color: #ffffff; 
+    padding: 30px 20px;
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    /* Adds a smooth animation when a user hovers over a card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+
+}
+
+.description__tags:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.description-icon {
+    font-size: 32px; 
+    margin-bottom: 16px; 
+    color: #1E1611; 
+    filter: drop-shadow(0px 70px 0 #230d05);
+    transform: translateY(-70px);
+}
+
+.description__tags p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1E1611; 
+    margin: 0;
+}
+
+.room__textarea{
+    text-align: center;
+    padding: 20px;
+}
+
+.room__textarea h1{
+    color: #230d05;
+    font-size: 3rem;
+}
+
+.room__textarea p{
+    color: #a77030;
+}
+
+.room-text{
+    width: 50%;
+}
+
+.room__display{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 side-by-side cards */
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.room-image-wrapper {
+    width: 100%;
+    height: 350px; 
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 16px; 
+}
+
+.room-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents images from stretching distortively */
+    transition: transform 0.5s ease;
+}
+
+/* Smooth zoom effect when hovering anywhere on the card */
+.room-card:hover .room-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* --- Typography Structure --- */
+.room-details h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1E1611; 
+  margin: 0 0 8px 0;
+}
+
+.room-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6e655f; 
+}
+
+.room-meta .price {
+  font-weight: 600;
+  color: #1E1611; 
+}
+
+.room-meta .divider {
+  color: #d1cbc7;
+}
+
+/* about section */
+.about-section{
+   
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    margin: 20px 15px;
+}
+
+.about__img{
+    width: 50%;
+}
+
+.about__img img{
+    border-radius: 10px;
+    height: 55vh;
+}
+
+.about__text{
+    width: 50%;
+    text-align: left;
+}
+
+.about__text span{
+    color: #a77030;
+}
+
+.about__text h1{
+    color: #230d05;
+    font-size: 3rem;
+}
+
+.about__text p{
+    /* Line height will be 16px * 1.5 = 24px */
+    line-height: 1.5; 
+}
+
+.about__button {
+  display: inline-block;
+  background-color: #230d05;
+  color: #ffffff !important;          
+  padding: 12px 32px;      
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;        
+  transition: background-color 0.3s ease;
+}
+
+.about__button:hover {
+  background-color: #a77030; /* Softly lightens up when hovered */
+}
+
+/* Display of other facilities */
+.facilities-section{
+    margin: 40px 10px;
+}
+
+.facilities-heading{
+    text-align: center;
+}
+
+.facilities-heading span{
+    color: #a77030;
+}
+
+.facilities-heading h1{
+    color: #230d05;
+    font-size: 3rem;
+}
+
+.facilities-options{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.facilities-options a{
     text-decoration: none;
     color: #fff;
-    background-color: #a77030;
-    padding: 8px 20px;
-    border-radius: 50px;
+    height: 50vh;
+    width: 15%;
+    border-radius: 30px;
+    position: relative;
+}
 
+.facilities-options a p{
+    position: relative;
+    top: 17rem;
+    left: 30px;
+}
+
+.facilities-options a:nth-of-type(1){
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/facilities/gym.jpg');
+    /* height: 100vh; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.facilities-options a:nth-of-type(2){
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/facilities/miniBar.jpg');
+    /* height: 100vh; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.facilities-options a:nth-of-type(3){
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/facilities/restaurant.jpg');
+    /* height: 100vh; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.facilities-options a:nth-of-type(4){
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/facilities/swimmingPool.jpg');
+    /* height: 100vh; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.facilities-options a:nth-of-type(5){
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/facilities/spa.jpg');
+    /* height: 100vh; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+    background-color: #230d05;
+    color: #fff;
+    padding: 60px;
+    margin-top: 70px;
+}
+
+.footer-container{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-socials{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* width: 30%; */
+}
+
+.footer-socials .name{
+    font-size: 3rem;
+}
+
+.socials-links{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+.socials-links a{
+    text-decoration: none;
+    color: #fff;
+    padding: 14px;
+    border: #fff 1px solid;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.socials-links a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.footer-links{
+    line-height: 1.5;
+    width: 30%;
+    padding-left: 50px;
+}
+
+
+
+.info-links{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.info-links a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact{
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+.address{
+    line-height: 1.5;
+    padding-top: 20px;
+}
+
+
+footer .footer-copyright{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+    border-top: #fff 1px solid;
+    padding-top: 20px;
+}
+
+.policies a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    .description{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room__display{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .facilities-options{
+        display: flex;
+        gap: 1em;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+
+    .facilities-options::-webkit-scrollbar{
+        display: none;
+    }
+
+    /* .facilities-options::scroll-button(right),
+    .facilities-options::scroll-button(left){
+        content: '>';
+        border: none;
+        background-color: #a77030;
+        color: #fff;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        padding-bottom: .1rem;
+        cursor: pointer;
+    }
+
+    .facilities-options::scroll-button(left){
+        content: '<';
+    }
+
+    .facilities-options::scroll-button(right):disabled,
+    .facilities-options::scroll-button(left):disabled{
+        opacity: 0.5;
+        cursor: auto;
+    } */
+
+    .facilities-options a{
+        flex: 0 0 20em;
+    }
 }
