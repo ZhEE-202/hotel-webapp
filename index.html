@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hotel website</title>
+    <!-- linking swiperJS CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
@@ -20,11 +25,19 @@
                 </p>
             </div>
             <nav>
-                <ul class="list">
+                <ul class="sidebar">
+                    <li onclick=hideSidebar() class="closeMenu"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                     <li> <a href="#">Home</a></li>
                     <li> <a href="#">Services</a></li>
                     <li> <a href="#">Contact</a></li>
                     <li> <a href="#">Prices</a></li>
+                </ul>
+                <ul class="list">
+                    <li class="hideOnMobile"> <a href="#">Home</a></li>
+                    <li class="hideOnMobile"> <a href="#">Services</a></li>
+                    <li class="hideOnMobile"> <a href="#">Contact</a></li>
+                    <li class="hideOnMobile"> <a href="#">Prices</a></li>
+                    <li onclick=showSidebar() class="menuBar"> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
                 </ul>
             </nav>
         </header>
@@ -144,6 +157,10 @@
 
     <!-- The about Section -->
      <div class="about-section">
+        <div class="mobile-text">
+            <span>WELCOME</span>
+            <h1>Experience Unmatched Comfort </h1>
+        </div>
         <div class="about__img">
             <img src="images/rooms/mainbed.jpg" alt="A room">
         </div>
@@ -156,28 +173,33 @@
      </div>
 
      <!-- The different facilities section -->
-    <div class="facilities-section">
+    <div class="facilities-section swiper">
         <div class="facilities-heading">
             <span>CURATED TASTE</span>
             <h1>Our Premium Facilities</h1>
         </div>
-        <div class="facilities-options">
-            <a href="#">
+        <div class="facilities-options swiper-wrapper">
+            <a href="#" class="swiper-slide">
                 <p>Gym</p>
             </a>
-            <a href="#">
+            <a href="#" class="swiper-slide">
                 <p>Mini Bar</p>
             </a>
-            <a href="#">
+            <a href="#" class="swiper-slide">
                 <p>Restaurant</p>
             </a>
-            <a href="#">
+            <a href="#" class="swiper-slide">
                 <p>Swimming Pool</p>
             </a>
-            <a href="#">
+            <a href="#" class="swiper-slide">
                 <p>Spa</p>
             </a>
         </div>
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
 
     <!-- the footer section -->
@@ -229,5 +251,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- linking swiperJS script -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 </html>

@@ -38,6 +38,37 @@ header .logoNDname img{
     width: 3vw;
 }
 
+.sidebar{
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+    padding: 30px;
+}
+
+.sidebar li:hover{
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a{
+    width: 100%;
+}
+
 header nav .list{
     display: flex;
     gap: 40px;
@@ -46,10 +77,22 @@ header nav .list{
    
 }
 
+.menuBar{
+    display: none;
+}
+
+.closeMenu{
+    position: fixed;
+    top: 20px;
+    left: 300px;
+}
+
+header nav .sidebar li,
 header nav .list li{
     list-style-type: none;       /* to remove the bullet point on a list*/
 }
 
+header nav .sidebar li a,
 header nav .list li a{
     text-decoration: none;
     color: #fff;
@@ -251,6 +294,13 @@ header nav .list li a{
     margin: 20px 15px;
 }
 
+.mobile-text{
+    width: 100%;
+    display: none;
+}
+
+
+
 .about__img{
     width: 50%;
 }
@@ -265,10 +315,12 @@ header nav .list li a{
     text-align: left;
 }
 
+.mobile-text span,
 .about__text span{
     color: #a77030;
 }
 
+.mobile-text h1,
 .about__text h1{
     color: #230d05;
     font-size: 3rem;
@@ -468,10 +520,50 @@ footer .footer-copyright{
     color: #fff;
 }
 
+.swiper-pagination {
+  display: none !important;
+}
+
+
+
+/* responsive layout */
+
 @media (max-width: 768px){
+    header{
+        padding: 30px 10px;
+    }
+
+    .hideOnMobile{
+        display: none;
+    }
+
+    .menuBar{
+        display: block;
+    }
+
+    .hero-text h1{
+        font-size: 3rem;
+    }
+
+    .text-area h1,
+    .room__textarea h1,
+    .mobile-text h1, 
+    .about__text h1, 
+    .facilities-heading h1 {
+        font-size: 2rem;
+    }
+
     .description{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .description__tags{
+        padding: 20px 10px;
+    }
+
+    .description-icon{
+        font-size: 20px;
     }
 
     .room__display{
@@ -479,41 +571,89 @@ footer .footer-copyright{
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .facilities-options{
+    .about-section{
         display: flex;
-        gap: 1em;
-        overflow-x: auto;
-        scroll-behavior: smooth;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        margin: 10px;
     }
 
-    .facilities-options::-webkit-scrollbar{
+    .mobile-text{
+        display: block;
+    }
+
+    .about__img{
+        width: 100%;
+    }
+
+    .about__img img{
+        width: 100%;
+        height: 40vh;
+    }
+
+    .about__text{
+        width: 100%;
+    }
+
+    .about__text span,
+    .about__text h1{
         display: none;
     }
 
-    /* .facilities-options::scroll-button(right),
-    .facilities-options::scroll-button(left){
-        content: '>';
-        border: none;
-        background-color: #a77030;
-        color: #fff;
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        padding-bottom: .1rem;
-        cursor: pointer;
+    .facilities-options {
+        display: flex;
+        gap: 1em;
+        /* overflow-x: auto; */
+        scroll-behavior: smooth;
+        max-width: 1100px;
+        margin: 0 60px 35px;
+        padding: 20px 10px;
+        overflow: hidden;
     }
 
-    .facilities-options::scroll-button(left){
-        content: '<';
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-links{
+        padding-left: 0px;
+        width: 100%;
     }
 
-    .facilities-options::scroll-button(right):disabled,
-    .facilities-options::scroll-button(left):disabled{
-        opacity: 0.5;
-        cursor: auto;
-    } */
+    
+}
 
-    .facilities-options a{
-        flex: 0 0 20em;
+/* tablet view */
+@media (max-width: 1040px) {
+    .about-section{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .mobile-text{
+        display: block;
+    }
+
+    .about__img{
+        width: 100%;
+    }
+
+    .about__img img{
+        width: 100%;
+        height: 40vh;
+    }
+
+    .about__text{
+        width: 100%;
+    }
+
+    .about__text span,
+    .about__text h1{
+        display: none;
     }
 }
