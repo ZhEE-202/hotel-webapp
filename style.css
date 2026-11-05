@@ -642,7 +642,7 @@ footer .footer-copyright{
 }
 
 /* tablet view */
-@media (min-width: 700px) {
+@media (max-width: 1000px) {
     .about-section{
         display: flex;
         flex-direction: column;
@@ -675,7 +675,7 @@ footer .footer-copyright{
 
      .facilities-options {
        display: grid ;
-       grid-template-columns: 1fr 1fr;
+       grid-template-columns: 1fr;
     }
     .facilities-options .mySlides{
         width: 100%;
